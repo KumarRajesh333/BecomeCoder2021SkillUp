@@ -1,29 +1,17 @@
-def isfib(n):
-    a,b,x,y=0,1,0,0
+def position_of_fib(n):
+    a,b,s=0,1,2
     while True:
+        if n==0:
+            return 1
+        if n==1:
+            return (2,3)
         c=a+b
-        if c==n:
-            print("True")
-            break
-        if c<n:
-            x=n-c
-            u=c
-        else:
-            y=c-n
-            v=c
-        if c>n:
-            if x==y:
-                print(u,v)
-                break
-            elif x<y:
-                print(u)
-                break
-            else:
-                print(v)
-                break
+        s+=1
         a,b=b,c
-        
-t=int(input())
-for i in range(t):
-    n=int(input())
-    isfib(n)
+        if c==n:
+            return s
+        if c>n:
+            return 'False'
+
+n=int(input())
+print(position_of_fib(n))
