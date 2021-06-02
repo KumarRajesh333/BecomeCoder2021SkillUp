@@ -5,7 +5,6 @@ def palindrome(data,n):
         while data[i]:
             r,data[i]=data[i]%10,data[i]//10
             s=s*10+r
-        data[i]=s
         if x==s:
             c+=1
     return c
